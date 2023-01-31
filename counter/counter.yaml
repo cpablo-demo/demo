@@ -14,6 +14,9 @@ spec:
       containers:
       - name: static-website
         image: nginx:alpine
+        env:
+        - name: ENV_FIRST_NAME
+          value: Chris
         ports:
         - containerPort: 80
         volumeMounts:
