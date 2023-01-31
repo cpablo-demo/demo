@@ -38,7 +38,13 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  ports:
-  - port: 3306
+#  ports:
+#  - port: 3306
   selector:
     app: mysql
+# allow access within the same cluster
+  ports:
+  - name: mysql
+    port: 3306
+    targetPort: 3306
+  type: ClusterIP
